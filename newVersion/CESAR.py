@@ -46,6 +46,11 @@ class Window:
         new_entry = Entry(self.window, width=width)
         new_entry.pack(side=side)
 
+    def addButton(self, text, command, width, height, side):
+        new_button = Button(self.window, text=text, command=command,
+                            width=width, height=height)
+        new_button.pack(side=side)
+
     def runWindow(self):
         try:
             self.window.mainloop()
@@ -90,28 +95,18 @@ try:
     window_resizable = (False, False)
 
     window = Window(window_title, window_resizable)
-    window.addLabel(text='repetições: ', side=LEFT)
+
+    window.addLabel(text='Repetições: ', side=LEFT)
     window.addEntry(width=20, side=LEFT)
     window.addEntry(width=20, side=RIGHT)
+    window.addLabel(text='Texto: ', side=RIGHT)
+    window.addLabel(text=None, side=BOTTOM)
+    window.addLabel(text=None, side=BOTTOM)
+    window.addButton(text='Enter', command=brain,
+                     width=10, height=2, side=LEFT)
+
     window.runWindow()
 
 except Exception:
     logger.error('An Error has been occorred - The program has been closed')
     exit(1)
-
-"""
-
-
-    label1 = Label(window, text='texto: ')
-    label1.pack(side=RIGHT)
-
-    textKey = Label(window, text=None)
-    textKey.pack(side=BOTTOM)
-
-    textFinal = Label(window, text=None, fg='black')
-    textFinal.pack(side=BOTTOM)
-
-    button = Button(window, text='enter', command=brain, width=10, height=2)
-    button.pack(side=LEFT)
-
-    window.mainloop() """
