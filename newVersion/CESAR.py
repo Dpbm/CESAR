@@ -42,6 +42,10 @@ class Window:
         new_label = Label(self.window, text=text)
         new_label.pack(side=side)
 
+    def addEntry(self, width, side):
+        new_entry = Entry(self.window, width=width)
+        new_entry.pack(side=side)
+
     def runWindow(self):
         try:
             self.window.mainloop()
@@ -86,7 +90,9 @@ try:
     window_resizable = (False, False)
 
     window = Window(window_title, window_resizable)
-    window.addLabel('repetições: ', LEFT)
+    window.addLabel(text='repetições: ', side=LEFT)
+    window.addEntry(width=20, side=LEFT)
+    window.addEntry(width=20, side=RIGHT)
     window.runWindow()
 
 except Exception:
@@ -95,11 +101,6 @@ except Exception:
 
 """
 
-    entry = Entry(window, width=20)
-    entry.pack(side=LEFT)
-
-    entry1 = Entry(window, width=20)
-    entry1.pack(side=RIGHT)
 
     label1 = Label(window, text='texto: ')
     label1.pack(side=RIGHT)
