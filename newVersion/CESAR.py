@@ -1,6 +1,6 @@
 from email.policy import default
 from random import randint
-from tkinter import LEFT, RIGHT, BOTTOM
+from tkinter import LEFT, RIGHT, BOTTOM, W
 from utils.window_creator import Window
 from utils.logger import logger
 from string import ascii_letters, punctuation, digits
@@ -34,7 +34,6 @@ def brain(getEntryDataByName, setLabelTextByName):
         setLabelTextByName('label-key', complete_key)
 
     except Exception as error:
-        print(error)
         logger.error('An Error has been occorred - Failed on encrypt')
         setLabelTextByName('label-result', 'Error, please try another time')
 
@@ -45,15 +44,27 @@ try:
 
     window = Window(window_title, window_resizable)
 
-    window.addLabel(text='Repetitions: ', side=LEFT, name='label-repetitions')
-    window.addEntry(width=20, side=LEFT, name='entry-repetitions')
-    window.addEntry(width=20, side=RIGHT, name='entry-text')
-    window.addLabel(text='Text: ', side=RIGHT, name='label-text')
-    window.addLabel(text=None, side=BOTTOM,  name='label-key')
-    window.addLabel(text=None, side=BOTTOM, name='label-result')
-    window.addButton(text='Enter', command=brain,
-                     width=10, height=2, side=LEFT, name='button-enter')
+    window.addLabel(text='Repetitions: ', name='label-repetitions')
+    window.addLabel(text='Text: ', name='label-text')
 
+    window.addEntry(width=20, name='entry-repetitions')
+    window.addEntry(width=20, name='entry-text')
+
+    window.addGrid(name='label-repetitions', column=0, row=0, sticky=W)
+    window.addGrid(name='label-text', column=0, row=1, sticky=W)
+
+    window.addGrid(name='entry-repetitions', column=1, row=0)
+    window.addGrid(name='entry-text', column=1, row=1)
+
+    window.addLabel(text=None,  name='label-key')
+    window.addLabel(text=None,  name='label-result')
+
+    window.addGrid(name='label-key', column=0, row=2)
+    window.addGrid(name='label-result', column=0, row=3)
+
+    window.addButton(text='Enter', command=brain,
+                     width=10, name='button-enter')
+    window.addGrid(name='button-enter', column=0, row=4)
     window.runWindow()
 
 except Exception:

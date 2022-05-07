@@ -161,6 +161,8 @@ cython_debug/
 
 # vscode
 .vscode
+qiskit-vscode-log.out
 
 # CESAR logs
 logs.txt
+

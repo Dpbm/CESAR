@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter.ttk import *
 from utils.logger import logger
 
 
@@ -12,21 +13,18 @@ class Window:
 
         self.widgets_ = {}
 
-    def addLabel(self, text, side, name):
+    def addLabel(self, text, name):
         new_label = Label(self.window, name=name, text=text)
         self.widgets_[name] = new_label
-        new_label.pack(side=side)
 
-    def addEntry(self, width, name, side):
+    def addEntry(self, width, name):
         new_entry = Entry(self.window, name=name, width=width)
         self.widgets_[name] = new_entry
-        new_entry.pack(side=side)
 
-    def addButton(self, text, command, width, height, name, side):
+    def addButton(self, text, command, width, name):
         new_button = Button(self.window, text=text, name=name, command=lambda: command(self.getEntryDataByName, self.setLabelTextByName),
-                            width=width, height=height)
+                            width=width)
         self.widgets_[name] = new_button
-        new_button.pack(side=side)
 
     def getEntryDataByName(self, name) -> str:
         return self.widgets_[name].get()
@@ -34,10 +32,14 @@ class Window:
     def setLabelTextByName(self, name, newText):
         self.widgets_[name]['text'] = newText
 
+    def addGrid(self, name, row, column, sticky=None):
+        self.widgets_[name].grid(
+            row=row, column=column, pady=2, sticky=sticky)
+
     def runWindow(self):
         try:
             self.window.mainloop()
-        except:
+        except Exception:
             logger.error(
                 'An Error has been occorred - The program has been closed')
             exit(1)
