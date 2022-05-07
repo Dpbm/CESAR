@@ -38,6 +38,10 @@ class Window:
         self.window.title(title)
         self.window.resizable(resizable_width, resizable_height)
 
+    def addLabel(self, text, side):
+        new_label = Label(self.window, text=text)
+        new_label.pack(side=side)
+
     def runWindow(self):
         try:
             self.window.mainloop()
@@ -81,15 +85,15 @@ try:
     window_title = 'PyCesar'
     window_resizable = (False, False)
 
-    Window(window_title, window_resizable).runWindow()
+    window = Window(window_title, window_resizable)
+    window.addLabel('repetições: ', LEFT)
+    window.runWindow()
 
 except Exception:
     logger.error('An Error has been occorred - The program has been closed')
     exit(1)
 
 """
-    label = Label(window, text='repeticoes: ')
-    label.pack(side=LEFT)
 
     entry = Entry(window, width=20)
     entry.pack(side=LEFT)
