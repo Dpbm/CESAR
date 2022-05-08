@@ -1,41 +1,7 @@
-from email.policy import default
-from random import randint
-from tkinter import LEFT, RIGHT, BOTTOM, W
+from tkinter import W
+from utils.encrypt import Cesar
 from utils.window_creator import Window
 from utils.logger import logger
-from string import ascii_letters, punctuation, digits
-
-
-class Cesar:
-    def __init__(self):
-        pass
-
-
-def brain(getEntryDataByName, setLabelTextByName):
-    try:
-        repetitions = int(getEntryDataByName('entry-repetitions'))
-        enter_text = getEntryDataByName('entry-text')
-
-        final_text = ''
-
-        default_characters = list(ascii_letters + punctuation + digits + ' ')
-        characters = list(ascii_letters + punctuation + digits + ' ')
-        complete_key = []
-
-        for _ in range(repetitions):
-            deslocation = randint(0, len(characters) - 1)
-            characters = [*characters[deslocation:], *characters[:deslocation]]
-            complete_key.append(deslocation)
-
-        for index in enter_text:
-            final_text += characters[default_characters.index(index)]
-
-        setLabelTextByName('label-result', final_text)
-        setLabelTextByName('label-key', complete_key)
-
-    except Exception as error:
-        logger.error('An Error has been occorred - Failed on encrypt')
-        setLabelTextByName('label-result', 'Error, please try another time')
 
 
 try:
@@ -56,15 +22,13 @@ try:
     window.addGrid(name='entry-repetitions', column=1, row=0)
     window.addGrid(name='entry-text', column=1, row=1)
 
-    window.addLabel(text=None,  name='label-key')
     window.addLabel(text=None,  name='label-result')
 
-    window.addGrid(name='label-key', column=0, row=2)
-    window.addGrid(name='label-result', column=0, row=3)
+    window.addGrid(name='label-result', column=0, row=2)
 
-    window.addButton(text='Enter', command=brain,
+    window.addButton(text='Enter', command=lambda: Cesar(window.getEntryDataByName, window.setLabelTextByName).calculate(),
                      width=10, name='button-enter')
-    window.addGrid(name='button-enter', column=0, row=4)
+    window.addGrid(name='button-enter', column=0, row=3)
     window.runWindow()
 
 except Exception:

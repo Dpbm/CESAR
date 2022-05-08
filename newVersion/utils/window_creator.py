@@ -17,12 +17,12 @@ class Window:
         new_label = Label(self.window, name=name, text=text)
         self.widgets_[name] = new_label
 
-    def addEntry(self, width, name):
+    def addEntry(self, name, width):
         new_entry = Entry(self.window, name=name, width=width)
         self.widgets_[name] = new_entry
 
     def addButton(self, text, command, width, name):
-        new_button = Button(self.window, text=text, name=name, command=lambda: command(self.getEntryDataByName, self.setLabelTextByName),
+        new_button = Button(self.window, text=text, name=name, command=command,
                             width=width)
         self.widgets_[name] = new_button
 

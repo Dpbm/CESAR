@@ -23,9 +23,13 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 
 ## 📷 How it looks
 
-### OldVersion
+### Old Version
 
-![Display oldVersion](/assets/display%20cesar%20cipher.png)
+![Display old version](/assets/display%20cesar%20cipher.png)
+
+
+### New Version
+![Display new version](/assets/display%20new%20version.png)
 
 <br />
 
@@ -50,9 +54,14 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 ## 🏃How to run
 
 
-OldVersion
+Old Version
 ```bash
     python3 /oldVersion/mainRefactor.py
+```
+
+New Version
+```bash
+    python3 /newVersion/CESAR.py
 ```
 
 `note:  the file /oldVersion/CESAR.py doesn't work as expected, it's only for test`
