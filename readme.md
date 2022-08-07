@@ -39,7 +39,7 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 
 ## How it works?
 
-When I've made this project, my idea was create a different version of Cesar's Cipher, so I've implemented a random dislocation for the characters and added a repetition. So when you enter with the repetitions and the text, the script will repeat `N times` the process of generate a random dislocation and get the corresponding character. At the end of execution, the script will generate a `encrypted.txt` file, that contains the key to decrypt the text and the encrypted text.
+When I've made this project, my idea was create a different version of Cesar's Cipher, so I've implemented a random dislocation for the characters and added a repetition. So when you enter with the repetitions and the text, the script will repeat `N times` the process of generate a random dislocation and get the corresponding character. At the end of execution, the script will generate an `encrypted.txt` file, that contains the key to decrypt the text and the encrypted text.
 
 <br />
 
