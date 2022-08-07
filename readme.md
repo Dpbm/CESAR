@@ -4,9 +4,6 @@
 
 <br />
 
----
-
-<br />
 
 ## 📁Folders
 
@@ -16,9 +13,6 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 
 <br />
 
----
-
-<br />
 
 
 ## 📷 How it looks
@@ -34,10 +28,6 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 <br />
 
 
----
-
-<br />
-
 ## Dependencies
 
 - tk (see how to install [windows](https://www.geeksforgeeks.org/how-to-install-tkinter-in-windows/), [linux](https://www.geeksforgeeks.org/how-to-install-tkinter-on-linux/) & [mac](https://www.geeksforgeeks.org/how-to-install-tkinter-on-macos/))
@@ -47,9 +37,6 @@ And in the [newVersion](/newVersion/) folder you will see the project now that I
 <br />
 
 
----
-
-<br />
 
 ## 🏃How to run
 
