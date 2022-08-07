@@ -1,6 +1,6 @@
 # Cesar Cipher
 
-## this is an old project that I've made using python, and recently I remembered and decided to see and refactor all the project, So to understand better what was my start idea and more about the project look at [this article (pt-BR)](-- link do medium --)
+## this is an old project that I've made using python, and recently I remembered and decided to see and refactor all the project
 
 <br />
 

@@ -2,7 +2,7 @@ from tkinter import W
 from utils.encrypt import Cesar
 from utils.window_creator import Window
 from utils.logger import logger
-
+import sys
 
 try:
     window_title = 'PyCesar'
@@ -33,4 +33,4 @@ try:
 
 except Exception:
     logger.error('An Error has been occorred - The program has been closed')
-    exit(1)
+    sys.exit(1)
